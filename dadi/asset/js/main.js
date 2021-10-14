@@ -2,11 +2,26 @@
 Stabilire il vincitore, in base a chi fa il punteggio più alto.*/
 
 //collego oggetti DOM
-const btnPlay = document.getElementById('btnplay')
-const giocatore = document.getElementById('giocatore')
-const vincitore = document.getElementById('vincitore')
-const computer = document.getElementById('computer')
+const btnPlay = document.getElementById('bntplay')
+var giocatore = document.getElementById('giocatore')
+var vincitore = document.getElementById('vincitore')
+var computer = document.getElementById('computer')
 
-btnPlay.addEventListener('click',function(){
-    let numeroComputer = 
+btnPlay.addEventListener('click',function() {
+    let numeroComputer = Math.floor(Math.random() * 6)+1;
+    let numeroGiocatore = Math.floor(Math.random() * 6)+1;
+    giocatore.innerHTML = 'Giocatore:' + numeroGiocatore
+    computer.innerHTML = 'Computer:' + numeroComputer
+     if (numeroGiocatore < numeroComputer) {
+        vincitore.innerHTML = 'Vincitore: COMPUTER' 
+    }else if (numeroGiocatore > numeroComputer) {
+        vincitore.innerHTML = 'Vincitore: GIOCATORE!!'
+    }else {
+        vincitore.innerHTML = 'Vincitore: NESSUNO!!' 
+    }
 })
+
+
+
+
+
